@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Jogo da Advinhação</string>
+    <string name="lblErrou">Errou!!!</string>
+    <string name="lblVenceu">Ganhou!!!</string>
+</resources>
