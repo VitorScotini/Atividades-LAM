@@ -1,48 +1,34 @@
 package com.example.alunos.listasimples;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.widget.ListView;
-import android.widget.SimpleAdapter;
-import java.util.HashMap;
-import java.util.ArrayList;
 import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.EditText;
+
+import com.example.alunos.listasimples.model.Pessoa;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+
+    ArrayList<Pessoa> lista = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String[] nomes = {"João", "Maria", "José", "Ana"};
-        String[] aniversarios = {"12/01", "07/09", "05/04", "23/07"};
-
-        ListView lista = findViewById(R.id.listView);
-
-        ArrayList<HashMap<String, String>> valores = new ArrayList<>();
-        for (int i = 0; i < nomes.lenght; i++) {
-            HashMap<String, String> item = new HashMap<>();
-            item.put("nome", nomes[i]);
-            item.put("aniv", aniversarios[i]);
-            valores.add(item);
-        }
-
-        String[] chaves = {"nome", "aniv"};
-        int[] labels = {R.id.lblFirst,R.id.lblSecond};
-
-        SimpleAdapter adapter = new SimpleAdapter(getApplicationContext(),
-                valores,R.layout.item_lista,chaves,labels);
-
-        lista.setAdapter(adapter);
+        lista.add(new Pessoa("Maria de Oliveira", "993450-6789",R.mipmap.ic_launcher_round));
+        lista.add(new Pessoa("Pedro da Silva", "943468-3489",R.mipmap.ic_launcher_round));
+        lista.add(new Pessoa("Joao de Souza", "875631",R.mipmap.ic_launcher_round));
     }
 
     public void mostrarLista(View v) {
-        Intent it = new Intent(this, mostraListaDinamica.class);
+        Intent it = new Intent(this, mostrarListaDinamica.class);
+        Bundle bundle = new Bundle();
+        bundle.putParcelableArrayList("contatos",lista);
+        it.putExtras(bundle);
         startActivity(it);
     }
-
-
-
 }

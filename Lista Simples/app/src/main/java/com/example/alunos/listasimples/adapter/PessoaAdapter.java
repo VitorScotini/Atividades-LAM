@@ -3,12 +3,13 @@ package com.example.alunos.listasimples.adapter;
 import android.app.Activity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.BaseAdapter;
 import android.widget.TextView;
 import com.example.alunos.listasimples.model.Pessoa;
 import com.example.alunos.listasimples.R;
 import java.util.List;
+
 
 
 public class PessoaAdapter extends BaseAdapter {
@@ -47,7 +48,7 @@ public class PessoaAdapter extends BaseAdapter {
         textNome.setText(obj.getNome());
 
         TextView textTelefone = v.findViewById(R.id.txtTelefone);
-        textTelefone..setText(obj.getTelefone());
+        textTelefone.setText(obj.getTelefone());
 
         TextView imgImagem = v.findViewById(R.id.imgImagem);
         imgImagem.setImageResource(obj.getImagem());
