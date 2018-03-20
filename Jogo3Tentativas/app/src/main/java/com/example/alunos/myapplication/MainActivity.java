@@ -8,35 +8,35 @@ import android.widget.EditText;
 import java.util.*;
 
 public class MainActivity extends AppCompatActivity {
+    Random numero = new Random();
+    int x = (numero.nextInt()%10)+1;
+    int tent = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
     public void Jogar(View view) {
         Scanner input = new Scanner(System.in);
-        Random numero = new Random();
         TextView resultado;
+        resultado = findViewById(R.id.resultado);
 
-        int x = (numero.nextInt()%10)+1;
-
-        int tent;
-        tent = 0;
-        while (tent < 3) {
+        if (tent > 3) {
+            resultado.setText(getResources().getString(R.string.lblTent));
+        } else {
             EditText userInput = findViewById(R.id.editText);
-            resultado = findViewById(R.id.resultado);
             String teste = userInput.getText().toString();
             int nmr;
             nmr = Integer.parseInt(teste);
 
             if (nmr == x) {
                 resultado.setText(getResources().getString(R.string.lblVenceu));
-                break;
             } else {
                 resultado.setText(getResources().getString(R.string.lblErrou));
             }
-            tent++;
+            tent = tent + 1 ;
         }
 
     }
