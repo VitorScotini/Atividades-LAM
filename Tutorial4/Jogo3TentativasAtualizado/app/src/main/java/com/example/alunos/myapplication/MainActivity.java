@@ -37,9 +37,8 @@ public class MainActivity extends AppCompatActivity {
             resultado.setText("O número é maior!");
         }else{
             resultado.setText("Ganhou!!!");
-            tentativas.setText(Integer.toString(tent));
         }
         tent = tent + 1;
-
+        tentativas.setText(Integer.toString(tent));
     }
 }
