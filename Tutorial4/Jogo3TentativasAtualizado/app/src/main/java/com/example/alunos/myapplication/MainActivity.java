@@ -8,6 +8,8 @@ import android.widget.TextView;
 import android.widget.EditText;
 import java.util.*;
 
+import com.example.alunos.myapplication.Ver_placar;
+
 public class MainActivity extends AppCompatActivity {
     Random numero = new Random();
     int x = (numero.nextInt(1000))+1;
@@ -43,7 +45,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Ver(View v){
-
+        Intent intent = new Intent(this,Ver_placar.class);
+        startActivity(intent);
     }
 
     public void deNovo(View v){

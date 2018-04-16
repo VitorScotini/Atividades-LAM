@@ -8,14 +8,14 @@ import android.widget.TextView;
 import android.widget.EditText;
 import java.util.*;
 
-public class Ver_placar extends AppCompatActivity {
-    TextView tentativas,t1,t2,t3,t4,t5;
+import com.example.alunos.myapplication.MainActivity;
 
+public class Ver_placar extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ver_placar);
+        setContentView(R.layout.activity_ver_placar);
     }
 
 }
