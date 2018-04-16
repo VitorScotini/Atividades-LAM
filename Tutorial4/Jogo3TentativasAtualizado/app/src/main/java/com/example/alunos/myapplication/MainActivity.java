@@ -1,5 +1,6 @@
 package com.example.alunos.myapplication;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     int x = (numero.nextInt(1000))+1;
     int tent = 0;
     int nmr;
+    TextView tentativas,resultado;
 
 
     @Override
@@ -22,8 +24,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void Jogar(View view) {
         Scanner input = new Scanner(System.in);
-        TextView resultado;
-        TextView tentativas;
         resultado = findViewById(R.id.resultado);
         tentativas = findViewById(R.id.tentativas);
 
@@ -40,5 +40,16 @@ public class MainActivity extends AppCompatActivity {
         }
         tent = tent + 1;
         tentativas.setText(Integer.toString(tent));
+    }
+
+    public void Ver(View v){
+
+    }
+
+    public void deNovo(View v){
+        x = (numero.nextInt(1000))+1;
+        tent = 0;
+        tentativas.setText(Integer.toString(tent));
+        resultado.setText("Joga denovo aê");
     }
 }
