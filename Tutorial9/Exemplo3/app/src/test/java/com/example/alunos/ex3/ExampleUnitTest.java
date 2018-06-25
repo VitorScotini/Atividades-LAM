@@ -1,4 +1,4 @@
-package com.example.alunos.exemplo3;
+package com.example.alunos.ex3;
 
 import org.junit.Test;
 
